@@ -13,13 +13,8 @@ export class BowlingGame {
       for (let frame = 0; frame < 10; frame++) {       // Iterate through 10 frames
 
        
-        console.log('Processing Frame:', frame);
-
             // Add log for current roll value and index
-            console.log('Roll:', this.rolls[rollIndex], 'at Index:', rollIndex);
-
-
-        if (this.isStrike(rollIndex)) {
+          if (this.isStrike(rollIndex)) {
            // Strike scenario: Add 10 points plus the bonus from the next two rolls
            score += 10 + this.strikeBonus(rollIndex);
           rollIndex += 1;
@@ -32,9 +27,7 @@ export class BowlingGame {
               score += this.rolls[rollIndex] + this.rolls[rollIndex + 1];
           rollIndex += 2;
         }
-        console.log('Updated Roll Index:', rollIndex);
-       
-      }
+        }
        console.log("" + score);
       return score;
     }
